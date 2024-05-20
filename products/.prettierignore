@@ -1,0 +1,8 @@
+# directories
+dist
+public
+
+# files
+.eslintrc.cjs
+.prettierrc.cjs
+vite.config.ts
