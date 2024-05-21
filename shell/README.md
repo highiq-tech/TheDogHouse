@@ -1,4 +1,4 @@
-# Product Listing Micro Frontend
+# Host Micro Frontend
 
 This micro frontend contains host Shell app, components and pub/sub library. The Shell references the other micro frontend apps and components using vite-plugin-federation remotes.
 
