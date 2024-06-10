@@ -1,0 +1,137 @@
+/**********************/
+/* index component */
+/**********************/
+.todo-container {
+  background-color: #2c3e50 !important;
+}
+
+.todo-selector {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem 0;
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+  }
+}
+
+/**********************/
+/* info component */
+/**********************/
+.info-container {
+  display: flex;
+  justify-content: center;
+  margin: 0.5rem auto;
+  font-size: 0.8em;
+  column-gap: 0.5em;
+
+  p {
+    color: #fff;
+  }
+}
+
+.info-container-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/**********************/
+/* wrapper component */
+/**********************/
+.wrapper-header {
+  text-align: center;
+  color: #fff;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.wrapper-container {
+  background-color: #2c3e50;
+  display: grid;
+  justify-items: center;
+  padding-bottom: 1rem;
+}
+
+/**********************/
+/* list component */
+/**********************/
+.list-container {
+  height: 500px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 2rem;
+  background-color: #ecf0f1;
+  padding: 1rem;
+}
+
+.list-todo-item-container {
+  margin: 1rem 0;
+  overflow-y: scroll;
+  display: flex;
+  gap: 0.5rem;
+  flex-direction: column;
+}
+
+.list-todo-item {
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  border-radius: 2rem;
+  border: 1px solid #2c3e50;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.list-icon-container {
+  display: flex;
+  gap: 0.5rem;
+
+  svg {
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.list-input-container {
+  width: 100%;
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+}
+
+.list-input {
+  width: 100%;
+  border-radius: 2rem !important;
+  height: 30px !important;
+  padding: 0 0.5rem;
+  border: solid 1px darkgray !important;
+}
+
+.list-button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  height: 30px;
+  width: 30px;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+/**********************/
+/* general attributes */
+/**********************/
+.active {
+  background-color: #e67e22 !important;
+  color: #fff !important;
+}

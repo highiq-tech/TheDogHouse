@@ -2,11 +2,8 @@
 
 ### WORK IN PROGRESS
 
-This repository contains 3 micro frontend packages, `shell`, `ui`, and `products`. 
-I use `@originjs/vite-plugin-federation` to orchestrate the micro frontend remotes and exposure. 
-
-**Important Note**
-There are 2 separate apps in the repository. I am currently in the middle of merging my initial implementation with another more robust and complex implementation.
+This repository contains 3 micro frontend packages, `shell`, `ui`, and `shared-state`.
+I use `@originjs/vite-plugin-federation` to orchestrate the micro frontend remotes and exposure.
 
 ## Tech Stack and Tools
 
@@ -16,14 +13,17 @@ There are 2 separate apps in the repository. I am currently in the middle of mer
 - TypeScript
 - Vite
 - Chakra UI
-- TanStack Query
+- Signals
 - Zustand
 
-#### BACKEND / DEV ENVIRONMENT
+#### STATE MANAGEMENT & CROSS APP COMMUNICATION
 
-- Testing Library
-- Vitest
-- MSW
+- Signals
+- Pub/Sub
+- Event Bus
+
+#### DEV ENVIRONMENT
+
 - ESLint
 - Prettier
 - Million
@@ -32,25 +32,25 @@ There are 2 separate apps in the repository. I am currently in the middle of mer
 
 #### PREREQUISITES
 
-You need to install `pnpm` globally. Before starting the `shell` host web application you need to start the `ui` and `products` micro frontends first.
+You need to install `pnpm` globally. Before starting the `shell` host web application you need to start the `ui` and `shared-state` micro frontends first.
 
 #### STEPS
 
 From the root directory of the repository run the following commands in 3 separate consoles:
 
-**ui**
+**shared-state**
 
-```js
-cd ui
+```bash
+cd shared-state
 pnpm install
 pnpm run build
 pnpm run start
 ```
 
-**products**
+**ui**
 
-```js
-cd products
+```bash
+cd ui
 pnpm install
 pnpm run build
 pnpm run start
@@ -58,7 +58,7 @@ pnpm run start
 
 **shell**
 
-```js
+```bash
 cd shell
 pnpm install
 pnpm run build
@@ -67,6 +67,6 @@ pnpm run start
 
 ## Cross App and Component Communication
 
-The products micro frontend has a Content component that emits customer and order created events which are subscribed and listened for in the shell micro frontend.
-You can click those buttons and you will see new events and messages show up in the shell web application in real time.
-This is happening from a custom library called eventBus.ts that uses the pub/sub pattern. Its located in the shell app under the lib directory.
+The `shared-state` micro frontend has an event bus and pub/sub library which emits customer and order created events that are subscribed to in the shell micro frontend.
+
+Click the action buttons in the `shell` to see custom events and emitted messages show up in the shell web application in real time.

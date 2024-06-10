@@ -1,0 +1,26 @@
+.header-container {
+  min-height: 3em;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 5px 16px;
+  background: #004644;
+  color: #fff;
+  font-size: 1.75em;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.header-left {
+  align-items: flex-start;
+  font-weight: 500;
+}
+
+.header-left span {
+  font-size: 75%;
+  font-weight: 300;
+  margin-left: 3px;
+  font-family: 'Karla Variable';
+}
+
+.header-right {
+  font-size: 0.75rem;
+}

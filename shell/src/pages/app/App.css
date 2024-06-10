@@ -1,0 +1,66 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.light-button {
+  background-color: #ffffff;
+  color: darkslategray;
+}
+
+.app-hero {
+  font-size: 0.8em;
+  font-weight: 500;
+  border: 1px solid rgb(153, 153, 153);
+  border-top: 0;
+  border-bottom: 0;
+  background-color: darkseagreen;
+  color: white;
+  text-align: left;
+  padding: 5px 15px;
+}
+
+.app-content-container {
+  flex-direction: row;
+  display: flex;
+  background-color: white;
+  border: solid 1px #999;
+  border-top: 0;
+  border-bottom: 0;
+  min-height: 200px;
+}
+
+.app-content-container-auto {
+  flex: auto;
+  padding-bottom: 10px;
+}
+
+.app-button-group {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  background-color: darkseagreen;
+  border: solid 1px #999;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+.app-h3 {
+  font-size: 1.1em;
+  font-weight: 500;
+  margin-bottom: 0.3em;
+  color: white;
+  background-color: darkslategray;
+}
+
+.app-ul {
+  display: contents;
+}
+
+.app-ul li {
+  color: lightslategray;
+  font-size: 0.8em;
+  list-style: none;
+  font-weight: 500;
+}

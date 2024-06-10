@@ -1,42 +1,23 @@
-const eventBus = new Comment('event-bus')
+import { Callback, EventsDefinition, StoreEvents } from 'types'
 
-export type Customer = {
-  id: string
-  name: string
+const eventBus = new Comment('event-emitter')
+
+function on<T extends StoreEvents>(eventName: T, handlerFn: (payload: EventsDefinition[T]) => void): Callback {
+  const handler = (event: Event) => {
+    const payload = (event as CustomEvent).detail as EventsDefinition[T]
+    handlerFn(payload)
+  }
+
+  eventBus.addEventListener(eventName, handler)
+
+  return () => {
+    eventBus.removeEventListener(eventName, handler)
+  }
 }
 
-export type Order = {
-  product: string
-  price: number
-}
-
-type EventsDefinition = {
-  CUSTOMER_CREATED: Customer
-  ORDER_CREATED: Order
-  ORDER_SHIPPED: void
-}
-
-type PetstoreEvents = keyof EventsDefinition
-
-function publish<T extends PetstoreEvents>(eventName: T, payload?: EventsDefinition[T]): void {
+function emit<T extends StoreEvents>(eventName: T, payload?: EventsDefinition[T]): void {
   const event = payload ? new CustomEvent(eventName, { detail: payload }) : new CustomEvent(eventName)
   eventBus.dispatchEvent(event)
 }
 
-type Unsubscribe = () => void
-
-function subscribe<T extends PetstoreEvents>(
-  eventName: T,
-  handlerFn: (payload: EventsDefinition[T]) => void,
-): Unsubscribe {
-  const eventHandler = (event: Event) => {
-    const eventPayload = (event as CustomEvent).detail as EventsDefinition[T]
-    handlerFn(eventPayload)
-  }
-  eventBus.addEventListener(eventName, eventHandler)
-  return () => {
-    eventBus.removeEventListener(eventName, eventHandler)
-  }
-}
-
-export { publish, subscribe }
+export { on, emit }

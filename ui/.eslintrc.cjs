@@ -15,7 +15,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['react', 'react-refresh', 'prettier'],
+  plugins: ['react', 'react-hooks', 'react-refresh', 'prettier'],
   rules: {
     'no-unused-vars': 'off',
     'react/destructuring-assignment': 'warn',
@@ -27,6 +27,8 @@ module.exports = {
         allowAsProps: true,
       },
     ],
+    'react-hooks/rules-of-hooks': 'error',
+    'react-hooks/exhaustive-deps': 'warn',
     'react-refresh/only-export-components': 'warn',
     '@typescript-eslint/consistent-type-definitions': ['error', 'type'],
     '@typescript-eslint/no-unused-vars': [

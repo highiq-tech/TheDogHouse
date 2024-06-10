@@ -1,5 +1,6 @@
 ///<reference types="react" />
 
-declare module 'ui/Header'
-declare module 'ui/Footer'
-declare module 'products/Content'
+declare module 'ui/*'
+declare module 'sharedState/*'
+declare module 'sharedState/onEmit'
+declare module 'sharedState/countSignal'

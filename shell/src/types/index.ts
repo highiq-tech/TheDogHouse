@@ -1,2 +1,1 @@
-export type { IQueryParams } from './IQueryParams'
-export type { IMeta } from './IMeta'
+export type { Customer, Order, EventsDefinition, StoreEvents, Callback } from './eventTypes'

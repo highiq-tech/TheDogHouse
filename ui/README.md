@@ -1,6 +1,6 @@
-# UI Component Micro Frontend
+# The Dog House | UI Component Micro Frontend
 
-This micro frontend contains reuseable components that are shared with other micro frontends using vite-plugin-federation. For example the header and footer components reside here.
+This package provides reuseable components that are shared with the other micro frontends using vite-plugin-federation expose and remotes. It also contains a demo app that showcases the components in the package.
 
 ## Getting Started
 
@@ -12,3 +12,5 @@ From the root directory of the repository run the following commands in a sepear
 - `pnpm install`
 - `pnpm run build`
 - `pnpm run start`
+
+NOTE: The `ui` micro frontend runs locally on http://localhost:5002

@@ -1,0 +1,23 @@
+.footer-container {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  background: #004644;
+  color: #eee;
+  font-size: 0.8em;
+  font-weight: 500;
+  font-family: 'Inter Variable', sans-serif;
+}
+
+.footer-right {
+  font-size: 0.5rem;
+}
+
+.footer-right button {
+  min-width: 30px;
+  background-color: #ffffff;
+  color: black;
+  border: solid 1px gainsboro;
+}

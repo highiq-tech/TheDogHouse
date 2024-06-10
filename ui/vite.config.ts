@@ -1,32 +1,45 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import federation from "@originjs/vite-plugin-federation";
-import checker from "vite-plugin-checker";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
+import federation from '@originjs/vite-plugin-federation'
+import checker from 'vite-plugin-checker'
+import million from 'million/compiler'
+import tsconfigPaths from 'vite-tsconfig-paths'
+import { dependencies } from './package.json'
 
 export default defineConfig({
   plugins: [
+    million.vite({ auto: true }),
     react(),
     federation({
-      name: "ui",
-      filename: "remoteEntry.js",
+      name: 'ui',
+      filename: 'remoteEntry.js',
       exposes: {
-        "./Header": "./src/components/Header",
-        "./Footer": "./src/components/Footer",
+        './Header': './src/components/header/header',
+        './Footer': './src/components/footer/footer',
       },
-      remotes: {},
-      shared: ["react", "react-dom"],
+      remotes: {
+        sharedState: 'http://localhost:5003/assets/remoteEntry.js',
+      },
+      shared: {
+        ...dependencies,
+        react: {
+          requiredVersion: dependencies['react'],
+        },
+        'react-dom': {
+          requiredVersion: dependencies['react-dom'],
+        },
+      },
     }),
     checker({
-      eslint: {
-        lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
-      },
+      eslint: { lintCommand: 'eslint "./src/**/*.{ts,tsx}"' },
       typescript: true,
     }),
+    tsconfigPaths(),
   ],
   build: {
     modulePreload: false,
-    target: "esnext",
+    target: 'esnext',
     minify: false,
     cssCodeSplit: false,
   },
-});
+})

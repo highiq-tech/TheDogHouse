@@ -3,6 +3,6 @@
   "editor.formatOnPaste": false,
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.workingDirectories": ["./shell", "./ui", "./products"],
+  "eslint.workingDirectories": ["./shell", "./ui", "./shared-state"],
   "files.autoSave": "afterDelay"
 }

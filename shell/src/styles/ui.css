@@ -1,0 +1,14 @@
+/* 
+    This is a temporary workaround to get css attributes in a local
+    css file to render in the browser for a remote micro frontends.
+*/
+.header-container2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 16px;
+  background: #004644;
+  color: #fff;
+  font-size: 40px;
+  font-weight: 500;
+}

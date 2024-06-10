@@ -1,12 +1,12 @@
-# Host Micro Frontend
+# The Dog House | Shell Micro Frontend
 
-This micro frontend contains host Shell app, components and pub/sub library. The Shell references the other micro frontend apps and components using vite-plugin-federation remotes.
+This micro frontend contains host `shell` app, components and event bus library. The `shell` references the other micro frontend apps, components and libraries using vite-plugin-federation remotes.
 
 ## Getting Started
 
 PREREQUISITES
 
-Start the `ui` and `products` micro frontends first in there own consoles.
+Start the `ui` and `shared-state` micro frontends first in there own consoles.
 
 STEPS
 
@@ -17,6 +17,8 @@ From the root directory of the repository run the following commands in a sepear
 - `pnpm run build`
 - `pnpm run start`
 
+NOTE: The `shell` micro frontend runs locally on http://localhost:5001
+
 ## Micro Frontend Functionality
 
-This app receives emitted events from the Product Listing micro frontend using a pub/sub library.
+The `shell` app references components from the `ui` micro frontend and demos how to do cross app and component communication using state management and pub/sub libraries from the `shared-state` micro frontend.
