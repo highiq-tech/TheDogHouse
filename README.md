@@ -67,6 +67,8 @@ pnpm run start
 
 ## Cross App and Component Communication
 
-The `shared-state` micro frontend has an event bus and pub/sub library which emits customer and order created events that are subscribed to in the shell micro frontend.
+The `shared-state` micro frontend exposes an event bus and pub/sub library that emits event data that are available for a web application or backend api to subscribed to.
 
-Click the action buttons in the `shell` to see custom events and emitted messages show up in the shell web application in real time.
+The `ui` micro frontend exposes header and footer React components that are available to be referenced and embedded in a React web application.
+
+The `shell` micro frontend is a React web application that references libraries and components from `shared-state` and `ui` micro frontends.

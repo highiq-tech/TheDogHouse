@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react'
 import { useSignal } from 'use-signals'
-import { isLoggedInSignal } from 'hooks/authSignal'
+import { isLoggedInSignal } from 'hooks/auth.signals'
 
 const NotLoggedIn = () => {
   console.log('<NotLoggedIn> rendering')

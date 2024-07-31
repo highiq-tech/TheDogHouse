@@ -1,5 +1,5 @@
 import { Callback } from 'types'
-import { EventsDefinition, StoreEvents } from './event-definitions/custom-events'
+import { EventsDefinition, StoreEvents } from './types/custom-events'
 
 const eventBus = new Comment('event-emitter')
 

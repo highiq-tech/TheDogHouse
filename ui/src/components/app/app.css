@@ -4,17 +4,28 @@
   text-align: center;
 }
 
-.App {
+.app {
   min-width: 800px;
 }
 
+.section-container {
+  width: 100%;
+  border: solid 1px #555;
+  background-color: gainsboro;
+  padding: 5px;
+}
+
+.alt {
+  background-color: lemonchiffon;
+}
+
+.section-container h3 {
+  font-weight: 500;
+}
+
 .body-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 300px;
   font-family: 'Karla Variable', sans-serif;
+  padding: 20px 0;
 }
 
 .button-container {
@@ -26,7 +37,11 @@
   border: solid 2px darkolivegreen;
 }
 
+.button-container button.alt {
+  border: none;
+}
+
 .title {
-  font-size: 1.5em;
-  margin-bottom: 20px;
+  font-size: 1.75em;
+  font-weight: 600;
 }

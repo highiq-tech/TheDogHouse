@@ -1,6 +1,6 @@
 import { Tab, Tabs, TabList, TabPanel, TabPanels } from '@chakra-ui/react'
 import { useSignal } from 'use-signals'
-import { isLoggedInSignal } from 'hooks/authSignal'
+import { isLoggedInSignal } from 'hooks/auth.signals'
 
 import EventEmitterDemo from 'demos/planet-app/apps/event-emitter-demo'
 import PubSubDemo from 'demos/planet-app/apps/pub-sub-demo'

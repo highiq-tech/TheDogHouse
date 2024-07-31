@@ -4,6 +4,10 @@
   text-align: center;
 }
 
+.app {
+  width: 800px;
+}
+
 .light-button {
   background-color: #ffffff;
   color: darkslategray;

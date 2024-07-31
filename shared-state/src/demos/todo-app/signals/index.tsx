@@ -1,4 +1,5 @@
 import { ChangeEvent, useEffect } from 'react'
+
 import { useSignal } from 'use-signals'
 import { inputSignal, todosSignal, lastUpdatedSignal } from './hooks/todo.signals'
 
@@ -23,11 +24,12 @@ const handleDeleteTodo = (id: string) => {
   todosSignal.set(todosSignal.get().filter((todo, _) => todo.id !== id))
 }
 
+type TodoType = { id: string; text: string; completed: boolean }[]
 const Signals = () => {
   console.log('<Signals> rendering')
 
-  const inputValue = useSignal(inputSignal)
-  const todosValue = useSignal(todosSignal)
+  const inputValue = useSignal<string>(inputSignal)
+  const todosValue = useSignal<TodoType>(todosSignal)
 
   useEffect(() => {
     localStorage.setItem('todoList', JSON.stringify(todosValue))

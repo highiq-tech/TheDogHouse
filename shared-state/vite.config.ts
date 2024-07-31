@@ -16,7 +16,7 @@ export default defineConfig({
       exposes: {
         './onEmit': './src/lib/event-emitter',
         './pubSub': './src/lib/pub-sub',
-        './countSignal': './src/hooks/countSignal',
+        './countSignal': './src/hooks/count.signals',
       },
       remotes: {},
       shared: {

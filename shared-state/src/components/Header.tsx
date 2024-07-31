@@ -1,6 +1,6 @@
 import { Box, Button, List, ListItem, Text } from '@chakra-ui/react'
 import { useSignal } from 'use-signals'
-import { userSignal } from 'hooks/authSignal'
+import { userSignal } from 'hooks/auth.signals'
 import { User } from 'types'
 
 import './Header.css'
